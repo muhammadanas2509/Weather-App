@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #212428, #104172);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.error {
+  color: rgb(248, 72, 72);
+  transition: color 0.3s ease-in-out;
+}
+
+.loader {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  color: #FFF;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: -38px -6px, -14px 6px,  14px -6px;
+  }
+  33% {
+    box-shadow: -38px 6px, -14px -6px,  14px 6px;
+  }
+  66% {
+    box-shadow: -38px -6px, -14px 6px, 14px -6px;
+  }
+  100% {
+    box-shadow: -38px 6px, -14px -6px, 14px 6px;
+  }
+}
+
+.weather-app {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(11, 100, 202, 0.563);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+/* Header Styles */
+header h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  transition: color 0.3s ease-in-out;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 35px 10px 10px; 
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+  background-color: #f0f0f0;
+  transform: scale(1.02);
+}
+
+.search-bar .clear-icon {
+  position: absolute;
+  right: 70px; 
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
+  font-size: 14px;
+  display: none; 
+}
+
+.search-bar input:focus + .clear-icon,
+.search-bar input:not(:placeholder-shown) + .clear-icon {
+  display: block;
+}
+
+.search-bar .clear-icon:hover {
+  color: #000;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background: #4facfe;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.search-bar button:hover {
+  background: #0066cc;
+  transform: scale(1.1);
+}
+
+.weather-info {
+  margin-top: 20px;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.weather-info .location {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: color 0.3s ease-in-out;
+}
+
+.weather-info img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.weather-info img:hover {
+  transform: scale(1.2);
+}
+
+.weather-info .temperature {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.weather-info .description {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  transition: color 0.3s ease-in-out;
+}
+
+.weather-info .details {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.weather-info .details .Hum,
+.weather-info .details .wind {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.weather-info .details img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.weather-info .details img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .weather-app {
+    max-width: 300px;
+    padding: 15px;
+    transition: padding 0.3s ease-in-out, max-width 0.3s ease-in-out;
+  }
+
+  .weather-info img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .weather-info .temperature {
+    font-size: 40px;
+  }
+}
